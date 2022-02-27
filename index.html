@@ -27,35 +27,56 @@
                         <label class="form-label">Name of your Univeristiy</label>
                         <input name="university" class="form-control" placeholder="university name" required>
                     </div>
-                    <div class="mb-3">
-                        <label class="form-label">QS Rank</label>
-                        <input name="QSrank" class="form-control" type="number" placeholder="QS ranking ">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="mb-3">
+                                <label class="form-label">Course</label>
+                                <input name="course" class="form-control" placeholder="course ">
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="mb-3">
+                                <label class="form-label">QS Rank</label>
+                                <input name="QSrank" class="form-control" type="number" placeholder="QS ranking ">
+                            </div>
+                        </div>
                     </div>
-                    <div class="mb-3">
-                        <label class="form-label">Course</label>
-                        <input name="course" class="form-control" placeholder="course ">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="mb-3">
+                                <label class="form-label">Course Duration</label>
+                                <input name="cousrseDuration" class="form-control" type="number" placeholder="course duration" required>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="mb-3">
+                                <label class="form-label">Course fee</label>
+                                <input name="courseFee" class="form-control" type="number" placeholder="course fee" required>
+                            </div>
+                        </div>
                     </div>
-                    <div class="mb-3">
-                        <label class="form-label">Course Duration</label>
-                        <input name="cousrseDuration" class="form-control" type="number" placeholder="course duration" required>
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="mb-3">
+                                <label class="form-label">Accomodation Cost</label>
+                                <input name="Accomodation" class="form-control" type="number" placeholder="accomodation cost" required>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="mb-3">
+                                <label class="form-label">Food and Travel Cost</label>
+                                <input name="food" class="form-control" type="number" placeholder="food cost" required>
+                            </div>
+                        </div>
                     </div>
+                    
                     <div class="mb-3">
-                        <label class="form-label">Course fee</label>
-                        <input name="courseFee" class="form-control" type="number" placeholder="course fee" required>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">No of Indian Students</label>
+                        <label class="form-label">No of Indian Students in your university</label>
                         <input name="noOfIndStudents" class="form-control" type="number"
                             placeholder="no of indian students">
                     </div>
-                    <div class="mb-3">
-                        <label class="form-label">Accomodation Cost</label>
-                        <input name="Accomodation" class="form-control" type="number" placeholder="accomodation cost" required>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Food and Travel Cost</label>
-                        <input name="food" class="form-control" type="number" placeholder="food cost" required>
-                    </div>
+                    
+                   
                     <div class="mb-3" style="display: grid; place-items: end;">
                         <button type="submit" onclick="formSubmit()" class="btn btn-success">add Univeristiy</button>
                     </div>
