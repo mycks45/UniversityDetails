@@ -8,8 +8,9 @@ $("#add-unv").validate({
             required: true,
 
         },
-        course: {
+        batch: {
             required: true,
+            number: true
         },
         courseDuration: {
             required: true,
@@ -39,3 +40,13 @@ $("#add-unv").validate({
     }
 })
 
+function newUniversity(val) {
+    if (val == 'other') {
+        document.getElementById('universitySelect').remove()
+        document.getElementById('universitySelectDiv').innerHTML =
+            `
+            <label class="form-label">Name of your Univeristiy</label> 
+            <input name="university" class="form-control" placeholder="Enter the name of your university" required>
+            `
+    }
+}

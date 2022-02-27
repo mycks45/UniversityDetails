@@ -18,65 +18,88 @@
         <div class="pt-5 center">
             <div class="col-sm-12 col-md-6">
                 <form id="add-unv" class="col-12" name="submit-to-google-sheet">
-                    <small>pls enter legitimate data....</small>
                     <div class="mb-3">
-                        <label class="form-label">Name</label>
+                        <label class="form-label">Advisor Name</label>
                         <input name="name" class="form-control" placeholder="Enter your Name" required>
                     </div>
-                    <div class="mb-3">
+                    <div class="mb-3" id="universitySelectDiv">
                         <label class="form-label">Name of your Univeristiy</label>
-                        <input name="university" class="form-control" placeholder="university name" required>
+                        <select id="universitySelect" name="university" onchange="newUniversity(this.value)"
+                            class="form-control col-1" placeholder="university name" required>
+                            <option value="" disabled selected>Select your Univeristiy</option>
+                            <option>Jalal-Abad State Medical University</option>
+                            <option>Yerevan State Medical University</option>
+                            <option>Yerevan Haybusak University</option>
+                            <option>Medical University Of Pleven</option>
+                            <option>Bicol Christian College Of Medicine</option>
+                            <option>University Of Northern Philippines</option>
+                            <option>Northern State Medical University</option>
+                            <option>Bashkir State Medical University</option>
+                            <option>National Research Ogarev Mordovia State University</option>
+                            <option>University Of Georgia</option>
+                            <option>Akaki Tsereteli State University</option>
+                            <option>Tbilisi State Medical University</option>
+                            <option>David Tvildiani Medical University</option>
+                            <option>Bukhara state medical institute</option>
+                            <option>Osh State Medical University</option>
+                            <option>Al Farabi Kazak National University</option>
+                            <option>Asfendiyarov Kazakh National Medical University</option>
+                            <option>Nicolae TestemițAnu State University Of Medicine And Pharmacy</option>
+                            <option>Southwest Medical University</option>
+                            <option>China Medical University</option>
+                            <option>O.o Bogomolets National Medical University</option>
+                            <option>Petro Mohyla Black Sea National Medical University"</option>
+                            <option>Vinnystia National Medical University</option>
+                            <option>Vn Karazin National Medical University</option>
+                            <option>Petre Shotadze Tbilisi Medical Academy</option>
+                            <option>Zaporizhya State Medical University</option>
+                            <option>National Pirogov Memorial Medical University</option>
+                            <option value="other">Other..</option>
+                        </select>
                     </div>
-                    <div class="row">
-                        <div class="col-6">
-                            <div class="mb-3">
-                                <label class="form-label">Course</label>
-                                <input name="course" class="form-control" placeholder="course ">
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="mb-3">
-                                <label class="form-label">QS Rank</label>
-                                <input name="QSrank" class="form-control" type="number" placeholder="QS ranking ">
-                            </div>
-                        </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Enter Your Batch Year (eg: 2018-2024)</label>
+                        <input name="batch" type="number" class="form-control" placeholder="batch">
                     </div>
-                    <div class="row">
-                        <div class="col-6">
-                            <div class="mb-3">
-                                <label class="form-label">Course Duration</label>
-                                <input name="cousrseDuration" class="form-control" type="number" placeholder="course duration" required>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="mb-3">
-                                <label class="form-label">Course fee</label>
-                                <input name="courseFee" class="form-control" type="number" placeholder="course fee" required>
-                            </div>
-                        </div>
+                    <div class="mb-3">
+                        <label class="form-label">QS Rank of your University (optional)</label>
+                        <input name="QSrank" class="form-control" type="number" placeholder="QS ranking ">
                     </div>
-                    <div class="row">
+                    <!-- <div class="row">
                         <div class="col-6">
-                            <div class="mb-3">
-                                <label class="form-label">Accomodation Cost</label>
-                                <input name="Accomodation" class="form-control" type="number" placeholder="accomodation cost" required>
-                            </div>
                         </div>
                         <div class="col-6">
-                            <div class="mb-3">
-                                <label class="form-label">Food and Travel Cost</label>
-                                <input name="food" class="form-control" type="number" placeholder="food cost" required>
-                            </div>
                         </div>
+                    </div> -->
+                    <div class="mb-3">
+                        <label class="form-label">Course Duration in year (eg: 6 year)</label>
+                        <input name="cousrseDuration" class="form-control" type="number"
+                            placeholder="course duration" required>
                     </div>
-                    
+                    <div class="mb-3">
+                        <label class="form-label">Amount of univeristiy tuition fee per year</label>
+                        <input name="courseFee" class="form-control" type="number" placeholder="course fee"
+                            required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Accomodation Cost per month</label>
+                        <input name="Accomodation" class="form-control" type="number"
+                            placeholder="accomodation cost" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Food Expenses per month</label>
+                        <input name="food" class="form-control" type="number" placeholder="Food expenses"
+                            required>
+                    </div>
+
                     <div class="mb-3">
                         <label class="form-label">No of Indian Students in your university</label>
                         <input name="noOfIndStudents" class="form-control" type="number"
                             placeholder="no of indian students">
                     </div>
-                    
-                   
+
+
                     <div class="mb-3" style="display: grid; place-items: end;">
                         <button type="submit" onclick="formSubmit()" class="btn btn-success">add Univeristiy</button>
                     </div>
@@ -93,17 +116,21 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
 
     <script>
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbzix54zfFNouNDeKdJd8Vf2Blx5AT2BZzYuA78NzTqp_EJBas9QpEi6UtFFY4ISDUNf/exec'
+        const scriptURL =
+            'https://script.google.com/macros/s/AKfycbzix54zfFNouNDeKdJd8Vf2Blx5AT2BZzYuA78NzTqp_EJBas9QpEi6UtFFY4ISDUNf/exec'
         const form = document.forms['submit-to-google-sheet']
-      
+
         form.addEventListener('submit', e => {
-          e.preventDefault()
-          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-            .then(response => {
-                alert('Success! Thank you for submiting, Have nice day')
-                window.location = "http://www.stargram.in"
-            })
-            .catch(error => alert('Error! some error have occur please try later'))
+            e.preventDefault()
+            fetch(scriptURL, {
+                    method: 'POST',
+                    body: new FormData(form)
+                })
+                .then(response => {
+                    alert('Success! Thank you for submiting, Have nice day')
+                    window.location = "http://www.stargram.in"
+                })
+                .catch(error => alert('Error! some error have occur please try later'))
         })
     </script>
 </body>
