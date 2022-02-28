@@ -15,3 +15,8 @@ label {
     font-size: 16px;
     font-weight: 450;
 }
+
+.form-control::placeholder { 
+    font-style: italic;
+    opacity: .5;
+  }

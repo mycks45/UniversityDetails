@@ -19,14 +19,14 @@
             <div class="col-sm-12 col-md-6">
                 <form id="add-unv" class="col-12" name="submit-to-google-sheet">
                     <div class="mb-3">
-                        <label class="form-label">Advisor Name</label>
-                        <input name="name" class="form-control" placeholder="Enter your Name" required>
+                        <label class="form-label">Your Name</label>
+                        <input name="name" class="form-control" placeholder="Eg: Joe John" required>
                     </div>
                     <div class="mb-3" id="universitySelectDiv">
                         <label class="form-label">Name of your Univeristiy</label>
                         <select id="universitySelect" name="university" onchange="newUniversity(this.value)"
                             class="form-control col-1" placeholder="university name" required>
-                            <option value="" disabled selected>Select your Univeristiy</option>
+                            <option value="" disabled selected>Select</option>
                             <option>Jalal-Abad State Medical University</option>
                             <option>Yerevan State Medical University</option>
                             <option>Yerevan Haybusak University</option>
@@ -54,17 +54,33 @@
                             <option>Petre Shotadze Tbilisi Medical Academy</option>
                             <option>Zaporizhya State Medical University</option>
                             <option>National Pirogov Memorial Medical University</option>
-                            <option value="other">Other..</option>
+                            <option value="other">Add+</option>
                         </select>
                     </div>
 
+                    
                     <div class="mb-3">
-                        <label class="form-label">Enter Your Batch Year (eg: 2018-2024)</label>
-                        <input name="batch" type="number" class="form-control" placeholder="batch">
+                        <label class="form-label">Course Duration (in year)</label>
+                        <input id="course-duration" name="cousrseDuration" class="form-control" type="number"
+                            placeholder="Eg: 6" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Your Batch (Eg: 2018-2024)</label>
+                        <div class="row">
+                            <div class="col-6">
+                                <label for="">Starting year</label>
+                                <input id="bStart" onkeydown="batchEndYearSet(this.value)" name="batchStart" type="number" min="2000" max="2099" step="1" value="2016" class="form-control" placeholder="batch">
+                            </div>
+                            <div class="col-6">
+                                <label for="">Ending year</label>
+                                <input id="bEnd" name="batchEnd" type="number" min="2000" max="2099" step="1" value="2022" class="form-control" placeholder="batch">
+                            </div>
+                        </div>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">QS Rank of your University (optional)</label>
-                        <input name="QSrank" class="form-control" type="number" placeholder="QS ranking ">
+                        <input name="QSrank" class="form-control" type="number" placeholder="Eg: 412">
                     </div>
                     <!-- <div class="row">
                         <div class="col-6">
@@ -73,30 +89,25 @@
                         </div>
                     </div> -->
                     <div class="mb-3">
-                        <label class="form-label">Course Duration in year (eg: 6 year)</label>
-                        <input name="cousrseDuration" class="form-control" type="number"
-                            placeholder="course duration" required>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Amount of univeristiy tuition fee per year in Rupees</label>
-                        <input name="courseFee" class="form-control" type="number" placeholder="course fee"
+                        <label class="form-label">Tuition fee per year (in Rupees)</label>
+                        <input name="courseFee" class="form-control" type="number" placeholder="Eg: 300000"
                             required>
                     </div>
                     <div class="mb-3">
-                        <label class="form-label">Accomodation Cost per month in Rupees</label>
+                        <label class="form-label">Cost of Accomodation per month (in Rupees)</label>
                         <input name="Accomodation" class="form-control" type="number"
-                            placeholder="accomodation cost" required>
+                            placeholder="Eg: 7000" required>
                     </div>
                     <div class="mb-3">
-                        <label class="form-label">Food Expenses per month in Rupees</label>
-                        <input name="food" class="form-control" type="number" placeholder="Food expenses"
+                        <label class="form-label">Food Expenses per month (in Rupees)</label>
+                        <input name="food" class="form-control" type="number" placeholder="Eg: 6000"
                             required>
                     </div>
 
                     <div class="mb-3">
-                        <label class="form-label">No of Indian Students in your university</label>
+                        <label class="form-label">Approximate number of Indian Students in your University</label>
                         <input name="noOfIndStudents" class="form-control" type="number"
-                            placeholder="no of indian students">
+                            placeholder="Eg: 1035">
                     </div>
 
 

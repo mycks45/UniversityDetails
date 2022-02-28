@@ -50,3 +50,14 @@ function newUniversity(val) {
             `
     }
 }
+
+function batchEndYearSet(val) {
+    var courseDuration = document.getElementById('course-duration').value
+    if(val.length == 4){
+        if(courseDuration.length){
+            var startYear = document.getElementById('bStart').value
+            var endYear = document.getElementById('bEnd')
+            endYear.value = parseInt(startYear) + parseInt(courseDuration)
+        }
+    }
+}
