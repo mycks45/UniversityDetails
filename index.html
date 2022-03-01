@@ -15,6 +15,9 @@
 
 <body>
     <div>
+        <div class="loader-wrapper">
+            <span class="loader"><span class="loader-inner"></span></span>
+        </div>
         <div class="pt-5 center">
             <div class="col-sm-12 col-md-6">
                 <form id="add-unv" class="col-12" name="submit-to-google-sheet">
@@ -125,6 +128,7 @@
     <script src="https://cdn.jsdelivr.net/npm/luxon@2.3.0/build/global/luxon.min.js"
         integrity="sha256-eWGhq5jRZ5QSi+PQuJt0eg4+hGCTwtsR9Qo+mC6Lyco=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <script>
         const scriptURL =
@@ -133,6 +137,7 @@
 
         form.addEventListener('submit', e => {
             e.preventDefault()
+            $(".loader-wrapper").fadeIn("slow");
             fetch(scriptURL, {
                     method: 'POST',
                     body: new FormData(form)
@@ -143,6 +148,10 @@
                 })
                 .catch(error => alert('Error! some error have occur please try later'))
         })
+
+        $(window).on("load",function(){
+            $(".loader-wrapper").fadeOut("slow");
+        });
     </script>
 </body>
 
